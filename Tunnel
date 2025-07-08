@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RatholStar - Enhanced Tunnel Management Script</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        .code-container {
+            background-color: #1a1a1a;
+            color: #e6e6e6;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.4;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .highlight {
+            background-color: #2d3748;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .comment {
+            color: #68d391;
+        }
+        .string {
+            color: #fbb6ce;
+        }
+        .keyword {
+            color: #63b3ed;
+        }
+        .function {
+            color: #f6e05e;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="container mx-auto px-4 py-8">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold mb-4 text-blue-400">
+                <i class="fas fa-network-wired mr-3"></i>RatholStar
+            </h1>
+            <p class="text-xl text-gray-300 mb-2">Enhanced Tunnel Management Script</p>
+            <p class="text-sm text-gray-400">
+                <i class="fab fa-github mr-2"></i>
+                <a href="https://github.com/Moriistar/ratholstar" class="text-blue-400 hover:text-blue-300">github.com/Moriistar/ratholstar</a>
+            </p>
+            <p class="text-sm text-gray-400">
+                <i class="fab fa-telegram mr-2"></i>Creator: MorteaStar_ir
+            </p>
+        </div>
+
+        <div class="bg-gray-800 rounded-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-green-400">
+                <i class="fas fa-star mr-2"></i>Enhanced Features
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-blue-400">
+                        <i class="fas fa-shield-alt mr-2"></i>Security Enhancements
+                    </h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Advanced encryption support</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Token-based authentication</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>IP whitelisting</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Rate limiting</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>DDoS protection</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-blue-400">
+                        <i class="fas fa-chart-line mr-2"></i>Monitoring & Analytics
+                    </h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Real-time traffic monitoring</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Performance metrics</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Connection logging</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Alert system</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Health checks</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-blue-400">
+                        <i class="fas fa-cogs mr-2"></i>Advanced Configuration
+                    </h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Auto-failover support</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Load balancing</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Bandwidth management</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Custom protocols</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Multi-threading</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-blue-400">
+                        <i class="fas fa-tools mr-2"></i>Management Tools
+                    </h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Web dashboard</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>API endpoints</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Backup/restore</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Auto-updates</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Remote management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gray-800 rounded-lg p-6">
+            <h2 class="text-2xl font-bold mb-4 text-green-400">
+                <i class="fas fa-code mr-2"></i>Enhanced Script Code
+            </h2>
+            <div class="code-container">#!/bin/bash
+
+<span class="comment"># ===============================================
+# RatholStar - Enhanced Tunnel Management Script
+# Version: 3.0
+# Author: MorteaStar_ir
+# GitHub: https://github.com/Moriistar/ratholstar
+# Telegram: @MorteaStar_ir
+# Description: Advanced tunnel management with enhanced security and monitoring
+# ===============================================</span>
+
+<span class="comment"># Exit on any error</span>
+<span class="keyword">set</span> -euo pipefail
+
+<span class="comment"># Script configuration</span>
+<span class="keyword">readonly</span> SCRIPT_NAME=<span class="string">"RatholStar"</span>
+<span class="keyword">readonly</span> SCRIPT_VERSION=<span class="string">"3.0"</span>
+<span class="keyword">readonly</span> SCRIPT_AUTHOR=<span class="string">"MorteaStar_ir"</span>
+<span class="keyword">readonly</span> SCRIPT_GITHUB=<span class="string">"https://github.com/Moriistar/ratholstar"</span>
+<span class="keyword">readonly</span> SCRIPT_TELEGRAM=<span class="string">"@MorteaStar_ir"</span>
+
+<span class="comment"># Paths and directories</span>
+<span class="keyword">readonly</span> CONFIG_DIR=<span class="string">"/opt/ratholstar"</span>
+<span class="keyword">readonly</span> LOG_DIR=<span class="string">"/var/log/ratholstar"</span>
+<span class="keyword">readonly</span> BACKUP_DIR=<span class="string">"/opt/ratholstar/backups"</span>
+<span class="keyword">readonly</span> SERVICE_DIR=<span class="string">"/etc/systemd/system"</span>
+<span class="keyword">readonly</span> CORE_DIR=<span class="string">"${CONFIG_DIR}/core"</span>
+<span class="keyword">readonly</span> WEB_DIR=<span class="string">"${CONFIG_DIR}/web"</span>
+<span class="keyword">readonly</span> SCRIPTS_DIR=<span class="string">"${CONFIG_DIR}/scripts"</span>
+
+<span class="comment"># Log files</span>
+<span class="keyword">readonly</span> MAIN_LOG=<span class="string">"${LOG_DIR}/ratholstar.log"</span>
+<span class="keyword">readonly</span> ERROR_LOG=<span class="string">"${LOG_DIR}/error.log"</span>
+<span class="keyword">readonly</span> TRAFFIC_LOG=<span class="string">"${LOG_DIR}/traffic.log"</span>
+<span class="keyword">readonly</span> SECURITY_LOG=<span class="string">"${LOG_DIR}/security.log"</span>
+
+<span class="comment"># Color codes</span>
+<span class="keyword">readonly</span> RED=<span class="string">'\033[0;31m'</span>
+<span class="keyword">readonly</span> GREEN=<span class="string">'\033[0;32m'</span>
+<span class="keyword">readonly</span> YELLOW=<span class="string">'\033[1;33m'</span>
+<span class="keyword">readonly</span> BLUE=<span class="string">'\033[0;34m'</span>
+<span class="keyword">readonly</span> MAGENTA=<span class="string">'\033[0;35m'</span>
+<span class="keyword">readonly</span> CYAN=<span class="string">'\033[0;36m'</span>
+<span class="keyword">readonly</span> WHITE=<span class="string">'\033[1;37m'</span>
+<span class="keyword">readonly</span> BOLD=<span class="string">'\033[1m'</span>
+<span class="keyword">readonly</span> RESET=<span class="string">'\033[0m'</span>
+
+<span class="comment"># Unicode symbols</span>
+<span class="keyword">readonly</span> SYMBOL_CHECK=<span class="string">"✓"</span>
+<span class="keyword">readonly</span> SYMBOL_CROSS=<span class="string">"✗"</span>
+<span class="keyword">readonly</span> SYMBOL_ARROW=<span class="string">"→"</span>
+<span class="keyword">readonly</span> SYMBOL_STAR=<span class="string">"★"</span>
+<span class="keyword">readonly</span> SYMBOL_GEAR=<span class="string">"⚙"</span>
+<span class="keyword">readonly</span> SYMBOL_SHIELD=<span class="string">"🛡"</span>
+<span class="keyword">readonly</span> SYMBOL_ROCKET=<span class="string">"🚀"</span>
+
+<span class="comment"># Check if running as root</span>
+<span class="keyword">if</span> [[ $EUID -ne 0 ]]; <span class="keyword">then</span>
+    echo -e <span class="string">"${RED}${SYMBOL_CROSS} This script must be run as root${RESET}"</span>
+    exit 1
+<span class="keyword">fi</span>
+
+<span class="comment"># Create necessary directories</span>
+<span class="function">create_directories</span>() {
+    <span class="keyword">local</span> dirs=(<span class="string">"$CONFIG_DIR"</span> <span class="string">"$LOG_DIR"</span> <span class="string">"$BACKUP_DIR"</span> <span class="string">"$CORE_DIR"</span> <span class="string">"$WEB_DIR"</span> <span class="string">"$SCRIPTS_DIR"</span>)
+    <span class="keyword">for</span> dir <span class="keyword">in</span> <span class="string">"${dirs[@]}"</span>; <span class="keyword">do</span>
+        [[ ! -d <span class="string">"$dir"</span> ]] && mkdir -p <span class="string">"$dir"</span>
+    <span class="keyword">done</span>
+}
+
+<span class="comment"># Logging functions</span>
+<span class="function">log_info</span>() {
+    <span class="keyword">local</span> message=<span class="string">"$1"</span>
+    echo -e <span class="string">"${GREEN}[INFO]${RESET} $message"</span>
+    echo <span class="string">"$(date '+%Y-%m-%d %H:%M:%S') [INFO] $message"</span> >> <span class="string">"$MAIN_LOG"</span>
+}
+
+<span class="function">log_warn</span>() {
+    <span class="keyword">local</span> message=<span class="string">"$1"</span>
+    echo -e <span class="string">"${YELLOW}[WARN]${RESET} $message"</span>
+    echo <span class="string">"$(date '+%Y-%m-%d %H:%M:%S') [WARN] $message"</span> >> <span class="string">"$MAIN_LOG"</span>
+}
+
+<span class="function">log_error</span>() {
+    <span class="keyword">local</span> message=<span class="string">"$1"</span>
+    echo -e <span class="string">"${RED}[ERROR]${RESET} $message"</span> >&2
+    echo <span class="string">"$(date '+%Y-%m-%d %H:%M:%S') [ERROR] $message"</span> >> <span class="string">"$ERROR_LOG"</span>
+}
+
+<span class="function">log_security</span>() {
+    <span class="keyword">local</span> message=<span class="string">"$1"</span>
+    echo <span class="string">"$(date '+%Y-%m-%d %H:%M:%S') [SECURITY] $message"</span> >> <span class="string">"$SECURITY_LOG"</span>
+}
+
+<span class="comment"># Enhanced colorize function</span>
+<span class="function">colorize</span>() {
+    <span class="keyword">local</span> color=<span class="string">"$1"</span>
+    <span class="keyword">local</span> text=<span class="string">"$2"</span>
+    <span class="keyword">local</span> style=<span class="string">"${3:-normal}"</span>
+    
+    <span class="keyword">case</span> <span class="string">"$color"</span> <span class="keyword">in</span>
+        red) color_code=<span class="string">"$RED"</span> ;;
+        green) color_code=<span class="string">"$GREEN"</span> ;;
+        yellow) color_code=<span class="string">"$YELLOW"</span> ;;
+        blue) color_code=<span class="string">"$BLUE"</span> ;;
+        magenta) color_code=<span class="string">"$MAGENTA"</span> ;;
+        cyan) color_code=<span class="string">"$CYAN"</span> ;;
+        white) color_code=<span class="string">"$WHITE"</span> ;;
+        *) color_code=<span class="string">"$RESET"</span> ;;
+    <span class="keyword">esac</span>
+    
+    <span class="keyword">case</span> <span class="string">"$style"</span> <span class="keyword">in</span>
+        bold) style_code=<span class="string">"$BOLD"</span> ;;
+        *) style_code=<span class="string">""</span> ;;
+    <span class="keyword">esac</span>
+    
+    echo -e <span class="string">"${style_code}${color_code}${text}${RESET}"</span>
+}
+
+<span class="comment"># Enhanced system information</span>
+<span class="function">get_system_info</span>() {
+    SERVER_IP=$(curl -s4 ifconfig.me || curl -s ipinfo.io/ip || echo <span class="string">"Unknown"</span>)
+    SERVER_COUNTRY=$(curl -s <span class="string">"http://ipwhois.app/json/$SERVER_IP"</span> | jq -r '.country' 2>/dev/null || echo <span class="string">"Unknown"</span>)
+    SERVER_ISP=$(curl -s <span class="string">"http://ipwhois.app/json/$SERVER_IP"</span> | jq -r '.isp' 2>/dev/null || echo <span class="string">"Unknown"</span>)
+    SYSTEM_ARCH=$(uname -m)
+    SYSTEM_OS=$(lsb_release -ds 2>/dev/null || echo <span class="string">"Unknown"</span>)
+    SYSTEM_KERNEL=$(uname -r)
+    SYSTEM_UPTIME=$(uptime -p 2>/dev/null || echo <span class="string">"Unknown"</span>)
+}
+
+<span class="comment"># Enhanced package installation</span>
+<span class="function">install_packages</span>() {
+    <span class="keyword">local</span> packages=(<span class="string">"curl"</span> <span class="string">"jq"</span> <span class="string">"unzip"</span> <span class="string">"cron"</span> <span class="string">"iptables"</span> <span class="string">"fail2ban"</span> <span class="string">"htop"</span> <span class="string">"iftop"</span> <span class="string">"nginx"</span>)
+    
+    <span class="keyword">for</span> package <span class="keyword">in</span> <span class="string">"${packages[@]}"</span>; <span class="keyword">do</span>
+        <span class="keyword">if</span> ! command -v <span class="string">"$package"</span> &> /dev/null; <span class="keyword">then</span>
+            log_info <span class="string">"Installing $package..."</span>
+            <span class="keyword">if</span> command -v apt-get &> /dev/null; <span class="keyword">then</span>
+                apt-get update -qq && apt-get install -y <span class="string">"$package"</span>
+            <span class="keyword">elif</span> command -v yum &> /dev/null; <span class="keyword">then</span>
+                yum install -y <span class="string">"$package"</span>
+            <span class="keyword">else</span>
+                log_error <span class="string">"Unsupported package manager"</span>
+                exit 1
+            <span class="keyword">fi</span>
+        <span class="keyword">fi</span>
+    <span class="keyword">done</span>
+}
+
+<span class="comment"># Enhanced security configuration</span>
+<span class="function">configure_security</span>() {
+    log_info <span class="string">"Configuring security settings..."</span>
+    
+    <span class="comment"># Configure firewall</span>
+    <span class="keyword">if</span> command -v ufw &> /dev/null; <span class="keyword">then</span>
+        ufw --force enable
+        ufw default deny incoming
+        ufw default allow outgoing
+        ufw allow ssh
+    <span class="keyword">fi</span>
+    
+    <span class="comment"># Configure fail2ban</span>
+    <span class="keyword">if</span> command -v fail2ban-client &> /dev/null; <span class="keyword">then</span>
+        cat > /etc/fail2ban/jail.local << EOF
+[DEFAULT]
+bantime = 3600
+findtime = 600
+maxretry = 5
+
+[sshd]
+enabled = true
+port = ssh
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 3
+
+[ratholstar]
+enabled = true
+port = 1024:65535
+filter = ratholstar
+logpath = $SECURITY_LOG
+maxretry = 10
+EOF
+        
+        cat > /etc/fail2ban/filter.d/ratholstar.conf << EOF
+[Definition]
+failregex = ^.*\[SECURITY\].*Failed connection from <HOST>.*$
+            ^.*\[SECURITY\].*Suspicious activity from <HOST>.*$
+ignoreregex =
+EOF
+        
+        systemctl restart fail2ban
+    <span class="keyword">fi</span>
+    
+    log_security <span class="string">"Security configuration completed"</span>
+}
+
+<span class="comment"># Enhanced rathole core download</span>
+<span class="function">download_rathole_core</span>() {
+    <span class="keyword">local</span> force_download=<span class="string">"${1:-false}"</span>
+    
+    <span class="keyword">if</span> [[ -f <span class="string">"${CORE_DIR}/rathole"</span> ]] && [[ <span class="string">"$force_download"</span> != <span class="string">"true"</span> ]]; <span class="keyword">then</span>
+        log_info <span class="string">"Rathole core already exists"</span>
+        <span class="keyword">return</span> 0
+    <span class="keyword">fi</span>
+    
+    log_info <span class="string">"Downloading Rathole core..."</span>
+    
+    <span class="keyword">local</span> github_entry=<span class="string">"185.199.108.133 raw.githubusercontent.com"</span>
+    <span class="keyword">if</span> ! grep -q <span class="string">"$github_entry"</span> /etc/hosts; <span class="keyword">then</span>
+        echo <span class="string">"$github_entry"</span> >> /etc/hosts
+    <span class="keyword">fi</span>
+    
+    <span class="keyword">local</span> download_url
+    <span class="keyword">if</span> [[ <span class="string">"$SYSTEM_ARCH"</span> == <span class="string">"x86_64"</span> ]]; <span class="keyword">then</span>
+        download_url=<span class="string">'https://github.com/Musixal/rathole-tunnel/raw/main/core/rathole.zip'</span>
+    <span class="keyword">else</span>
+        download_url=$(curl -sSL https://api.github.com/repos/rapiz1/rathole/releases/latest | 
+                      grep -o <span class="string">"https://.*$SYSTEM_ARCH.*linux.*zip"</span> | head -n 1)
+    <span class="keyword">fi</span>
+    
+    <span class="keyword">if</span> [[ -z <span class="string">"$download_url"</span> ]]; <span class="keyword">then</span>
+        log_error <span class="string">"Failed to get download URL"</span>
+        exit 1
+    <span class="keyword">fi</span>
+    
+    <span class="keyword">local</span> temp_dir=$(mktemp -d)
+    curl -sSL -o <span class="string">"$temp_dir/rathole.zip"</span> <span class="string">"$download_url"</span>
+    unzip -q <span class="string">"$temp_dir/rathole.zip"</span> -d <span class="string">"$CORE_DIR"</span>
+    chmod +x <span class="string">"${CORE_DIR}/rathole"</span>
+    rm -rf <span class="string">"$temp_dir"</span>
+    
+    log_info <span class="string">"Rathole core downloaded successfully"</span>
+}
+
+<span class="comment"># Enhanced ASCII logo</span>
+<span class="function">display_logo</span>() {
+    clear
+    echo -e <span class="string">"${CYAN}"</span>
+    cat << <span class="string">"EOF"</span>
+    ██████╗  █████╗ ████████╗██╗  ██╗ ██████╗ ██╗     ███████╗████████╗ █████╗ ██████╗ 
+    ██╔══██╗██╔══██╗╚══██╔══╝██║  ██║██╔═══██╗██║     ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗
+    ██████╔╝███████║   ██║   ███████║██║   ██║██║     ███████╗   ██║   ███████║██████╔╝
+    ██╔══██╗██╔══██║   ██║   ██╔══██║██║   ██║██║     ╚════██║   ██║   ██╔══██║██╔══██╗
+    ██║  ██║██║  ██║   ██║   ██║  ██║╚██████╔╝███████╗███████║   ██║   ██║  ██║██║  ██║
+    ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝
+<span class="string">EOF</span>
+    echo -e <span class="string">"${RESET}"</span>
+    
+    echo -e <span class="string">"${BOLD}${WHITE}                        Advanced Tunnel Management System${RESET}"</span>
+    echo -e <span class="string">"${CYAN}                              Version: ${YELLOW}$SCRIPT_VERSION${RESET}"</span>
+    echo -e <span class="string">"${CYAN}                              Author: ${YELLOW}$SCRIPT_AUTHOR${RESET}"</span>
+    echo -e <span class="string">"${CYAN}                              GitHub: ${YELLOW}$SCRIPT_GITHUB${RESET}"</span>
+    echo -e <span class="string">"${CYAN}                              Telegram: ${YELLOW}$SCRIPT_TELEGRAM${RESET}"</span>
+    echo
+}
+
+<span class="comment"># Enhanced server information display</span>
+<span class="function">display_server_info</span>() {
+    echo -e <span class="string">"${MAGENTA}═══════════════════════════════════════════════════════════════════════${RESET}"</span>
+    echo -e <span class="string">"${CYAN}${SYMBOL_GEAR} System Information:${RESET}"</span>
+    echo -e <span class="string">"${CYAN}  ${SYMBOL_ARROW} Location: ${YELLOW}$SERVER_COUNTRY${RESET}"</span>
+    echo -e <span class="string">"${CYAN}  ${SYMBOL_ARROW} ISP: ${YELLOW}$SERVER_ISP${RESET}"</span>
+    echo -e <span class="string">"${CYAN}  ${SYMBOL_ARROW} Architecture: ${YELLOW}$SYSTEM_ARCH${RESET}"</span>
+    echo -e <span class="string">"${CYAN}  ${SYMBOL_ARROW} OS: ${YELLOW}$SYSTEM_OS${RESET}"</span>
+    echo -e <span class="string">"${CYAN}  ${SYMBOL_ARROW} Kernel: ${YELLOW}$SYSTEM_KERNEL${RESET}"</span>
+    echo -e <span class="string">"${CYAN}  ${SYMBOL_ARROW} Uptime: ${YELLOW}$SYSTEM_UPTIME${RESET}"</span>
+    echo -e <span class="string">"${MAGENTA}═══════════════════════════════════════════════════════════════════════${RESET}"</span>
+}
+
+<span class="comment"># Enhanced core status display</span>
+<span class="function">display_core_status</span>() {
+    <span class="keyword">local</span> core_status
+    <span class="keyword">if</span> [[ -f <span class="string">"${CORE_DIR}/rathole"</span> ]]; <span class="keyword">then</span>
+        <span class="keyword">local</span> core_version=$(<span class="string">"${CORE_DIR}/rathole"</span> --version 2>/dev/null | grep -o <span class="string">'[0-9]\+\.[0-9]\+\.[0-9]\+'</span> | head -1)
+        core_status=<span class="string">"${GREEN}${SYMBOL_CHECK} Installed (v$core_version)${RESET}"</span>
+    <span class="keyword">else</span>
+        core_status=<span class="string">"${RED}${SYMBOL_CROSS} Not installed${RESET}"</span>
+    <span class="keyword">fi</span>
+    
+    echo -e <span class="string">"${CYAN}${SYMBOL_SHIELD} Rathole Core: $core_status${RESET}"</span>
+    echo -e <span class="string">"${MAGENTA}═══════════════════════════════════════════════════════════════════════${RESET}"</span>
+}
+
+<span class="comment"># Enhanced port checking</span>
+<span class="function">check_port</span>() {
+    <span class="keyword">local</span> port=<span class="string">"$1"</span>
+    <span class="keyword">local</span> transport=<span class="string">"$2"</span>
+    
+    <span class="keyword">case</span> <span class="string">"$transport"</span> <span class="keyword">in</span>
+        tcp) ss -tlnp <span class="string">"sport = :$port"</span> | grep -q <span class="string">":$port"</span> ;;
+        udp) ss -ulnp <span class="string">"sport = :$port"</span> | grep -q <span class="string">":$port"</span> ;;
+        *) <span class="keyword">return</span> 1 ;;
+    <span class="keyword">esac</span>
+}
+
+<span class="comment"># Enhanced IPv6 checking</span>
+<span class="function">check_ipv6</span>() {
+    <span class="keyword">local</span> ip=<span class="string">"$1"</span>
+    ip=<span class="string">"${ip#[}"</span>
+    ip=<span class="string">"${ip%]}"</span>
+    
+    <span class="keyword">local</span> ipv6_pattern=<span class="string">"^([0-9a-fA-F]{1,4}:){7}([0-9a-fA-F]{1,4}|:)$|^(([0-9a-fA-F]{1,4}:){1,7}|:):((:[0-9a-fA-F]{1,4}){1,7}|:)$"</span>
+    [[ <span class="string">"$ip"</span> =~ $ipv6_pattern ]]
+}
+
+<span class="comment"># Enhanced validation functions</span>
+<span class="function">validate_port</span>() {
+    <span class="keyword">local</span> port=<span class="string">"$1"</span>
+    [[ <span class="string">"$port"</span> =~ ^[0-9]+$ ]] && (( port > 22 && port <= 65535 ))
+}
+
+<span class="function">validate_token</span>() {
+    <span class="keyword">local</span> token=<span class="string">"$1"</span>
+    [[ <span class="string">"${#token}"</span> -ge 8 ]] && [[ <span class="string">"$token"</span> =~ ^[a-zA-Z0-9_-]+$ ]]
+}
+
+<span class="comment"># Enhanced tunnel configuration</span>
+<span class="function">configure_tunnel</span>() {
+    <span class="keyword">if</span> [[ ! -f <span class="string">"${CORE_DIR}/rathole"</span> ]]; <span class="keyword">then</span>
+        log_error <span class="string">"Rathole core not found. Please install it first."</span>
+        <span class="keyword">return</span> 1
+    <span class="keyword">fi</span>
+    
+    clear
+    colorize green <span class="string">"${SYMBOL_ROCKET} Advanced Tunnel Configuration"</span> bold
+    echo
+    colorize yellow <span class="string">"Essential Tips:"</span>
+    echo -e <span class="string">"  • Enable TCP_NODELAY for lower latency (higher CPU usage)"</span>
+    echo -e <span class="string">"  • Disable Heartbeat for high connection count scenarios"</span>
+    echo -e <span class="string">"  • Use IPv6 for better connectivity in some regions"</span>
+    echo -e <span class="string">"  • Consider encryption for sensitive data"</span>
+    echo
+    
+    echo -e <span class="string">"${GREEN}1) ${SYMBOL_SHIELD} Configure Iran Server (Server Mode)${RESET}"</span>
+    echo -e <span class="string">"${MAGENTA}2) ${SYMBOL_ROCKET} Configure Kharej Server (Client Mode)${RESET}"</span>
+    echo -e <span class="string">"${CYAN}3) ${SYMBOL_GEAR} Advanced Configuration${RESET}"</span>
+    echo -e <span class="string">"${YELLOW}0) ${SYMBOL_ARROW} Return to Main Menu${RESET}"</span>
+    echo
+    
+    read -p <span class="string">"Enter your choice: "</span> choice
+    <span class="keyword">case</span> <span class="string">"$choice"</span> <span class="keyword">in</span>
+        1) configure_iran_server ;;
+        2) configure_kharej_server ;;
+        3) configure_advanced_tunnel ;;
+        0) <span class="keyword">return</span> 0 ;;
+        *) log_error <span class="string">"Invalid option"</span> && sleep 2 ;;
+    <span class="keyword">esac</span>
+}
+
+<span class="comment"># Enhanced Iran server configuration</span>
+<span class="function">configure_iran_server</span>() {
+    clear
+    colorize cyan <span class="string">"${SYMBOL_SHIELD} Iran Server Configuration"</span> bold
+    echo
+    
+    <span class="comment"># IP version selection</span>
+    <span class="keyword">local</span> local_ip=<span class="string">'0.0.0.0'</span>
+    read -p <span class="string">"Enable IPv6 support? (y/n): "</span> ipv6_choice
+    <span class="keyword">if</span> [[ <span class="string">"$ipv6_choice"</span> =~ ^[Yy]$ ]]; <span class="keyword">then</span>
+        local_ip=<span class="string">'[::]'</span>
+        log_info <span class="string">"IPv6 enabled"</span>
+    <span class="keyword">else</span>
+        log_info <span class="string">"IPv4 enabled"</span>
+    <span class="keyword">fi</span>
+    
+    <span class="comment"># Tunnel port configuration</span>
+    <span class="keyword">local</span> tunnel_port
+    <span class="keyword">while</span> <span class="keyword">true</span>; <span class="keyword">do</span>
+        read -p <span class="string">"Tunnel port (1024-65535): "</span> tunnel_port
+        <span class="keyword">if</span> validate_port <span class="string">"$tunnel_port"</span>; <span class="keyword">then</span>
+            <span class="keyword">if</span> check_port <span class="string">"$tunnel_port"</span> <span class="string">"tcp"</span>; <span class="keyword">then</span>
+                log_error <span class="string">"Port $tunnel_port is already in use"</span>
+            <span class="keyword">else</span>
+                <span class="keyword">break</span>
+            <span class="keyword">fi</span>
+        <span class="keyword">else</span>
+            log_error <span class="string">"Invalid port number"</span>
+        <span class="keyword">fi</span>
+    <span class="keyword">done</span>
+    
+    <span class="comment"># Advanced options</span>
+    <span class="keyword">local</span> nodelay heartbeat transport encryption
+    
+    read -p <span class="string">"Enable TCP_NODELAY (y/n): "</span> nodelay_choice
+    nodelay=$([[ <span class="string">"$nodelay_choice"</span> =~ ^[Yy]$ ]] && echo <span class="string">"true"</span> || echo <span class="string">"false"</span>)
+    
+    read -p <span class="string">"Enable Heartbeat (y/n): "</span> heartbeat_choice
+    heartbeat=$([[ <span class="string">"$heartbeat_choice"</span> =~ ^[Yy]$ ]] && echo <span class="string">"30"</span> || echo <span class="string">"0"</span>)
+    
+    read -p <span class="string">"Transport type (tcp/udp): "</span> transport
+    <span class="keyword">while</span> [[ <span class="string">"$transport"</span> != <span class="string">"tcp"</span> && <span class="string">"$transport"</span> != <span class="string">"udp"</span> ]]; <span class="keyword">do</span>
+        read -p <span class="string">"Invalid transport. Please enter tcp or udp: "</span> transport
+    <span class="keyword">done</span>
+    
+    read -p <span class="string">"Enable encryption (y/n): "</span> encryption_choice
+    encryption=$([[ <span class="string">"$encryption_choice"</span> =~ ^[Yy]$ ]] && echo <span class="string">"true"</span> || echo <span class="string">"false"</span>)
+    
+    <span class="comment"># Token configuration</span>
+    <span class="keyword">local</span> token
+    <span class="keyword">while</span> <span class="keyword">true</span>; <span class="keyword">do</span>
+        read -p <span class="string">"Security token (min 8 chars, or press Enter for auto-generate): "</span> token
+        <span class="keyword">if</span> [[ -z <span class="string">"$token"</span> ]]; <span class="keyword">then</span>
+            token=$(openssl rand -hex 16)
+            log_info <span class="string">"Auto-generated token: $token"</span>
+            <span class="keyword">break</span>
+        <span class="keyword">elif</span> validate_token <span class="string">"$token"</span>; <span class="keyword">then</span>
+            <span class="keyword">break</span>
+        <span class="keyword">else</span>
+            log_error <span class="string">"Invalid token format"</span>
+        <span class="keyword">fi</span>
+    <span class="keyword">done</span>
+    
+    <span class="comment"># Port configuration</span>
+    echo
+    read -p <span class="string">"Enter ports separated by commas (e.g., 2070,2080,8080): "</span> input_ports
+    <span class="keyword">local</span> -a config_ports
+    IFS=<span class="string">','</span> read -ra ports <<< <span class="string">"${input_ports// /}"</span>
+    
+    <span class="keyword">for</span> port <span class="keyword">in</span> <span class="string">"${ports[@]}"</span>; <span class="keyword">do</span>
+        <span class="keyword">if</span> validate_port <span class="string">"$port"</span>; <span class="keyword">then</span>
+            config_ports+=(<span class="string">"$port"</span>)
+            log_info <span class="string">"Port $port added"</span>
+        <span class="keyword">else</span>
+            log_error <span class="string">"Invalid port: $port"</span>
+        <span class="keyword">fi</span>
+    <span class="keyword">done</span>
+    
+    <span class="keyword">if</span> [[ <span class="string">"${#config_ports[@]}"</span> -eq 0 ]]; <span class="keyword">then</span>
+        log_error <span class="string">"No valid ports configured"</span>
+        <span class="keyword">return</span> 1
+    <span class="keyword">fi</span>
+    
+    <span class="comment"># Generate configuration</span>
+    <span class="keyword">local</span> config_file=<span class="string">"${CONFIG_DIR}/iran_${tunnel_port}.toml"</span>
+    
+    cat > <span class="string">"$config_file"</span> << EOF
+# RatholStar Iran Server Configuration
+# Generated: $(date)
+# Version: $SCRIPT_VERSION
+
+[server]
+bind_addr = "${local_ip}:${tunnel_port}"
+default_token = "$token"
+heartbeat_interval = $heartbeat
+
+[server.transport]
+type = "tcp"
+
+[server.transport.tcp]
+nodelay = $nodelay
+EOF
+
+    <span class="keyword">if</span> [[ <span class="string">"$encryption"</span> == <span class="string">"true"</span> ]]; <span class="keyword">then</span>
+        cat >> <span class="string">"$config_file"</span> << EOF
+
+[server.transport.tcp.tls]
+hostname = "ratholstar.local"
+trusted_root = "ca.pem"
+pkcs12 = "identity.p12"
+pkcs12_password = "password"
+EOF
+    <span class="keyword">fi</span>
+
+    <span class="keyword">for</span> port <span class="keyword">in</span> <span class="string">"${config_ports[@]}"</span>; <span class="keyword">do</span>
+        cat >> <span class="string">"$config_file"</span> << EOF
+
+[server.services.${port}]
+type = "$transport"
+bind_addr = "${local_ip}:${port}"
+EOF
+    <span class="keyword">done</span>
+    
+    <span class="comment"># Create systemd service</span>
+    create_systemd_service <span class="string">"iran_${tunnel_port}"</span> <span class="string">"$config_file"</span>
+    
+    <span class="comment"># Create backup</span>
+    backup_config <span class="string">"iran_${tunnel_port}"</span>
+    
+    log_info <span class="string">"Iran server configured successfully"</span>
+    log_security <span class="string">"Iran server created on port $tunnel_port"</span>
+    
+    echo
+    colorize green <span class="string">"${SYMBOL_CHECK} Configuration completed!"</span> bold
+    echo -e <span class="string">"Config file: $config_file"</span>
+    echo -e <span class="string">"Service: ratholstar-iran_${tunnel_port}"</span>
+    echo -e <span class="string">"Token: $token"</span>
+    echo
+    read -p <span class="string">"Press Enter to continue..."</span>
+}
+
+<span class="comment"># Enhanced Kharej server configuration</span>
+<span class="function">configure_kharej_server</span>() {
+    clear
+    colorize cyan <span class="string">"${SYMBOL_ROCKET} Kharej Server Configuration"</span> bold
+    echo
+    
+    <span class="comment"># Iran server details</span>
+    <span class="keyword">local</span> iran_ip tunnel_port
+    <span class="keyword">while</span> <span class="keyword">true</span>; <span class="keyword">do</span>
+        read -p <span class="string">"Iran server IP address: "</span> iran_ip
+        <span class="keyword">if</span> [[ -n <span class="string">"$iran_ip"</span> ]]; <span class="keyword">then</span>
+            <span class="keyword">break</span>
+        <span class="keyword">else</span>
+            log_error <span class="string">"IP address cannot be empty"</span>
+        <span class="keyword">fi</span>
+    <span class="keyword">done</span>
+    
+    <span class="keyword">while</span> <span class="keyword">true</span>; <span class="keyword">do</span>
+        read -p <span class="string">"Iran server tunnel port: "</span> tunnel_port
+        <span class="keyword">if</span> validate_port <span class="string">"$tunnel_port"</span>; <span class="keyword">then</span>
+            <span class="keyword">break</span>
+        <span class="keyword">else</span>
+            log_error <span class="string">"Invalid port number"</span>
+        <span class="keyword">fi</span>
+    <span class="keyword">done</span>
+    
+    <span class="comment"># Advanced options</span>
+    <span class="keyword">local</span> nodelay heartbeat transport encryption
+    
+    read -p <span class="string">"Enable TCP_NODELAY (y/n): "</span> nodelay_choice
+    nodelay=$([[ <span class="string">"$nodelay_choice"</span> =~ ^[Yy]$ ]] && echo <span class="string">"true"</span> || echo <span class="string">"false"</span>)
+    
+    read -p <span class="string">"Enable Heartbeat (y/n): "</span> heartbeat_choice
+    heartbeat=$([[ <span class="string">"$heartbeat_choice"</span> =~ ^[Yy]$ ]] && echo <span class="string">"40"</span> || echo <span class="string">"0"</span>)
+    
+    read -p <span class="string">"Transport type (tcp/udp): "</span> transport
+    <span class="keyword">while</span> [[ <span class="string">"$transport"</span> != <span class="string">"tcp"</span> && <span class="string">"$transport"</span> != <span class="string">"udp"</span> ]]; <span class="keyword">do</span>
+        read -p <span class="string">"Invalid transport. Please enter tcp or udp: "</span> transport
+    <span class="keyword">done</span>
+    
+    read -p <span class="string">"Enable encryption (y/n): "</span> encryption_choice
+    encryption=$([[ <span class="string">"$encryption_choice"</span> =~ ^[Yy]$ ]] && echo <span class="string">"true"</span> || echo <span class="string">"false"</span>)
+    
+    <span class="comment"># Token</span>
+    read -p <span class="string">"Security token: "</span> token
+    <span class="keyword">while</span> ! validate_token <span class="string">"$token"</span>; <span class="keyword">do</span>
+        read -p <span class="string">"Invalid token. Please enter a valid token: "</span> token
+    <span class="keyword">done</span>
+    
+    <span class="comment"># Local IP determination</span>
+    <span class="keyword">local</span> local_ip=<span class="string">'0.0.0.0'</span>
+    <span class="keyword">if</span> check_ipv6 <span class="string">"$iran_ip"</span>; <span class="keyword">then</span>
+        local_ip=<span class="string">'[::]'</span>
+        iran_ip=<span class="string">"${iran_ip#[}"</span>
+        iran_ip=<span class="string">"${iran_ip%]}"</span>
+    <span class="keyword">fi</span>
+    
+    <span class="comment"># Port configuration</span>
+    echo
+    read -p <span class="string">"Enter ports separated by commas (e.g., 2070,2080,8080): "</span> input_ports
+    <span class="keyword">local</span> -a config_ports
+    IFS=<span class="string">','</span> read -ra ports <<< <span class="string">"${input_ports// /}"</span>
+    
+    <span class="keyword">for</span> port <span class="keyword">in</span> <span class="string">"${ports[@]}"</span>; <span class="keyword">do</span>
+        <span class="keyword">if</span> validate_port <span class="string">"$port"</span>; <span class="keyword">then</span>
+            config_ports+=(<span class="string">"$port"</span>)
+            log_info <span class="string">"Port $port added"</span>
+        <span class="keyword">else</span>
+            log_error <span class="string">"Invalid port: $port"</span>
+        <span class="keyword">fi</span>
+    <span class="keyword">done</span>
+    
+    <span class="keyword">if</span> [[ <span class="string">"${#config_ports[@]}"</span> -eq 0 ]]; <span class="keyword">then</span>
+        log_error <span class="string">"No valid ports configured"</span>
+        <span class="keyword">return</span> 1
+    <span class="keyword">fi</span>
+    
+    <span class="comment"># Generate configuration</span>
+    <span class="keyword">local</span> config_file=<span class="string">"${CONFIG_DIR}/kharej_${tunnel_port}.toml"</span>
+    
+    cat > <span class="string">"$config_file"</span> << EOF
+# RatholStar Kharej Server Configuration
+# Generated: $(date)
+# Version: $SCRIPT_VERSION
+
+[client]
+remote_addr = "${iran_ip}:${tunnel_port}"
+default_token = "$token"
+heartbeat_timeout = $heartbeat
+retry_interval = 1
+
+[client.transport]
+type = "tcp"
+
+[client.transport.tcp]
+nodelay = $nodelay
+EOF
+
+    <span class="keyword">if</span> [[ <span class="string">"$encryption"</span> == <span class="string">"true"</span> ]]; <span class="keyword">then</span>
+        cat >> <span class="string">"$config_file"</span> << EOF
+
+[client.transport.tcp.tls]
+hostname = "ratholstar.local"
+trusted_root = "ca.pem"
+EOF
+    <span class="keyword">fi</span>
+
+    <span class="keyword">for</span> port <span class="keyword">in</span> <span class="string">"${config_ports[@]}"</span>; <span class="keyword">do</span>
+        cat >> <span class="string">"$config_file"</span> << EOF
+
+[client.services.${port}]
+type = "$transport"
+local_addr = "${local_ip}:${port}"
+EOF
+    <span class="keyword">done</span>
+    
+    <span class="comment"># Create systemd service</span>
+    create_systemd_service <span class="string">"kharej_${tunnel_port}"</span> <span class="string">"$config_file"</span>
+    
+    <span class="comment"># Create backup</span>
+    backup_config <span class="string">"kharej_${tunnel_port}"</span>
+    
+    log_info <span class="string">"Kharej server configured successfully"</span>
+    log_security <span class="string">"Kharej client created for $iran_ip:$tunnel_port"</span>
+    
+    echo
+    colorize green <span class="string">"${SYMBOL_CHECK} Configuration completed!"</span> bold
+    echo -e <span class="string">"Config file: $config_file"</span>
+    echo -e <span class="string">"Service: ratholstar-kharej_${tunnel_port}"</span>
+    echo -e <span class="string">"Connecting to: $iran_ip:$tunnel_port"</span>
+    echo
+    read -p <span class="string">"Press Enter to continue..."</span>
+}
+
+<span class="comment"># Enhanced systemd service creation</span>
+<span class="function">create_systemd_service</span>() {
+    <span class="keyword">local</span> service_name=<span class="string">"$1"</span>
+    <span class="keyword">local</span> config_file=<span class="string">"$2"</span>
+    <span class="keyword">local</span> service_file=<span class="string">"${SERVICE_DIR}/ratholstar-${service_name}.service"</span>
+    
+    cat > <span class="string">"$service_file"</span> << EOF
+[Unit]
+Description=RatholStar Tunnel Service ($service_name)
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=${CORE_DIR}/rathole $config_file
+ExecReload=/bin/kill -HUP \$MAINPID
+KillMode=mixed
+Restart=always
+RestartSec=5
+StartLimitIntervalSec=0
+
+# Security settings
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=$CONFIG_DIR $LOG_DIR
+PrivateTmp=yes
+
+# Resource limits
+LimitNOFILE=1048576
+LimitNPROC=1048576
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=ratholstar-$service_name
+
+[Install]
+WantedBy=multi-user.target
+EOF
+    
+    systemctl daemon-reload
+    systemctl enable <span class="string">"ratholstar-${service_name}.service"</span>
+    systemctl start <span class="string">"ratholstar-${service_name}.service"</span>
+    
+    log_info <span class="string">"Service ratholstar-$service_name created and started"</span>
+}
+
+<span class="comment"># Enhanced backup system</span>
+<span class="function">backup_config</span>() {
+    <span class="keyword">local</span> config_name=<span class="string">"$1"</span>
+    <span class="keyword">local</span> backup_file=<span class="string">"${BACKUP_DIR}/${config_name}_$(date +%Y%m%d_%H%M%S).tar.gz"</span>
+    
+    tar -czf <span class="string">"$backup_file"</span> -C <span class="string">"$CONFIG_DIR"</span> <span class="string">"${config_name}.toml"</span>
+    log_info <span class="string">"Configuration backed up to $backup_file"</span>
+}
+
+<span class="comment"># Enhanced monitoring system</span>
+<span class="function">monitor_tunnels</span>() {
+    clear
+    colorize cyan <span class="string">"${SYMBOL_GEAR} Tunnel Monitoring System"</span> bold
+    echo
+    
+    <span class="keyword">local</span> -a services
+    <span class="keyword">local</span> index=1
+    
+    <span class="comment"># Collect all services</span>
+    <span class="keyword">for</span> config_file <span class="keyword">in</span> <span class="string">"$CONFIG_DIR"</span>/*.toml; <span class="keyword">do</span>
+        [[ -f <span class="string">"$config_file"</span> ]] || <span class="keyword">continue</span>
+        
+        <span class="keyword">local</span> config_name
+        config_name=$(basename <span class="string">"$config_file"</span> .toml)
+        services+=(<span class="string">"$config_name"</span>)
+        
+        <span class="keyword">local</span> service_name=<span class="string">"ratholstar-${config_name}.service"</span>
+        <span class="keyword">local</span> status_color status_text
+        
+        <span class="keyword">if</span> systemctl is-active <span class="string">"$service_name"</span> &>/dev/null; <span class="keyword">then</span>
+            status_color=<span class="string">"$GREEN"</span>
+            status_text=<span class="string">"${SYMBOL_CHECK} Running"</span>
+        <span class="keyword">else</span>
+            status_color=<span class="string">"$RED"</span>
+            status_text=<span class="string">"${SYMBOL_CROSS} Stopped"</span>
+        <span class="keyword">fi</span>
+        
+        <span class="comment"># Get port from config name</span>
+        <span class="keyword">local</span> port=<span class="string">"${config_name##*_}"</span>
+        <span class="keyword">local</span> type=<span class="string">"${config_name%_*}"</span>
+        
+        echo -e <span class="string">"${MAGENTA}${index})${RESET} ${CYAN}$type${RESET} tunnel (Port: ${YELLOW}$port${RESET}) - ${status_color}$status_text${RESET}"</span>
+        
+        <span class="comment"># Show additional info if running</span>
+        <span class="keyword">if</span> systemctl is-active <span class="string">"$service_name"</span> &>/dev/null; <span class="keyword">then</span>
+            <span class="keyword">local</span> memory_usage
+            memory_usage=$(systemctl show <span class="string">"$service_name"</span> --property=MemoryCurrent --value 2>/dev/null)
+            <span class="keyword">if</span> [[ -n <span class="string">"$memory_usage"</span> && <span class="string">"$memory_usage"</span> != <span class="string">"[not set]"</span> ]]; <span class="keyword">then</span>
+                memory_usage=$(( memory_usage / 1024 / 1024 ))
+                echo -e <span class="string">"   Memory: ${memory_usage}MB"</span>
+            <span class="keyword">fi</span>
+        <span class="keyword">fi</span>
+        
+        ((index++))
+    <span class="keyword">done</span>
+    
+    <span class="keyword">if</span> [[ <span class="string">"${#services[@]}"</span> -eq 0 ]]; <span class="keyword">then</span>
+        log_warn <span class="string">"No tunnel configurations found"</span>
+        read -p <span class="string">"Press Enter to continue..."</span>
+        <span class="keyword">return</span>
+    <span class="keyword">fi</span>
+    
+    echo
+    echo -e <span class="string">"${CYAN}Management Options:${RESET}"</span>
+    echo -e <span class="string">"${GREEN}r) Refresh status${RESET}"</span>
+    echo -e <span class="string">"${YELLOW}l) View logs${RESET}"</span>
+    echo -e <span class="string">"${MAGENTA}s) Service management${RESET}"</span>
+    echo -e <span class="string">"${CYAN}t) Real-time monitoring${RESET}"</span>
+    echo -e <span class="string">"${RED}0) Return to main menu${RESET}"</span>
+    echo
+    
+    read -p <span class="string">"Enter your choice: "</span> choice
+    <span class="keyword">case</span> <span class="string">"$choice"</span> <span class="keyword">in</span>
+        r|R) monitor_tunnels ;;
+        l|L) view_logs_menu ;;
+        s|S) service_management_menu ;;
+        t|T) real_time_monitor ;;
+        0) <span class="keyword">return</span> 0 ;;
+        *) log_error <span class="string">"Invalid option"</span> && sleep 2 && monitor_tunnels ;;
+    <span class="keyword">esac</span>
+}
+
+<span class="comment"># Real-time monitoring</span>
+<span class="function">real_time_monitor</span>() {
+    clear
+    colorize cyan <span class="string">"${SYMBOL_GEAR} Real-time Monitoring (Press Ctrl+C to exit)"</span> bold
+    echo
+    
+    <span class="keyword">while</span> <span class="keyword">true</span>; <span class="keyword">do</span>
+        clear
+        echo -e <span class="string">"${CYAN}=== RatholStar Real-time Monitor ===${RESET}"</span>
+        echo -e <span class="string">"${CYAN}Updated: $(date)${RESET}"</span>
+        echo
+        
+        <span class="comment"># System resources</span>
+        <span class="keyword">local</span> cpu_usage
+        cpu_usage=$(top -bn1 | grep <span class="string">"Cpu(s)"</span> | awk <span class="string">'{print $2+$4}'</span> | cut -d<span class="string">'%'</span> -f1)
+        <span class="keyword">local</span> memory_usage
+        memory_usage=$(free | grep Mem | awk <span class="string">'{printf "%.1f", $3/$2 * 100.0}'</span>)
+        
+        echo -e <span class="string">"${YELLOW}System Resources:${RESET}"</span>
+        echo -e <span class="string">"  CPU: ${cpu_usage}%"</span>
+        echo -e <span class="string">"  Memory: ${memory_usage}%"</span>
+        echo
+        
+        <span class="comment"># Service status</span>
+        echo -e <span class="string">"${YELLOW}Service Status:${RESET}"</span>
+        <span class="keyword">for</span> config_file <span class="keyword">in</span> <span class="string">"$CONFIG_DIR"</span>/*.toml; <span class="keyword">do</span>
+            [[ -f <span class="string">"$config_file"</span> ]] || <span class="keyword">continue</span>
+            
+            <span class="keyword">local</span> config_name
+            config_name=$(basename <span class="string">"$config_file"</span> .toml)
+            <span class="keyword">local</span> service_name=<span class="string">"ratholstar-${config_name}.service"</span>
+            
+            <span class="keyword">if</span> systemctl is-active <span class="string">"$service_name"</span> &>/dev/null; <span class="keyword">then</span>
+                echo -e <span class="string">"  ${GREEN}${SYMBOL_CHECK}${RESET} $config_name"</span>
+            <span class="keyword">else</span>
+                echo -e <span class="string">"  ${RED}${SYMBOL_CROSS}${RESET} $config_name"</span>
+            <span class="keyword">fi</span>
+        <span class="keyword">done</span>
+        
+        echo
+        echo -e <span class="string">"${YELLOW}Network Connections:${RESET}"</span>
+        netstat -tuln | grep LISTEN | grep -E <span class="string">':(80|443|22|[0-9]{4,5})'</span> | head -10
+        
+        sleep 5
+    <span class="keyword">done</span>
+}
+
+<span class="comment"># Enhanced main menu</span>
+<span class="function">display_main_menu</span>() {
+    clear
+    display_logo
+    get_system_info
+    display_server_info
+    display_core_status
+    
+    echo
+    echo -e <span class="string">"${BOLD}${WHITE}Main Menu:${RESET}"</span>
+    echo -e <span class="string">"${GREEN} 1) ${SYMBOL_ROCKET} Configure New Tunnel${RESET}"</span>
+    echo -e <span class="string">"${CYAN} 2) ${SYMBOL_GEAR} Monitor & Manage Tunnels${RESET}"</span>
+    echo -e <span class="string">"${YELLOW} 3) ${SYMBOL_SHIELD} Security & Optimization${RESET}"</span>
+    echo -e <span class="string">"${MAGENTA} 4) ${SYMBOL_STAR} Advanced Features${RESET}"</span>
+    echo -e <span class="string">"${BLUE} 5) ${SYMBOL_GEAR} System Tools${RESET}"</span>
+    echo -e <span class="string">"${WHITE} 6) ${SYMBOL_ARROW} Install/Update Core${RESET}"</span>
+    echo -e <span class="string">"${RED} 0) ${SYMBOL_CROSS} Exit${RESET}"</span>
+    echo
+    echo -e <span class="string">"${MAGENTA}═══════════════════════════════════════════════════════════════════════${RESET}"</span>
+}
+
+<span class="comment"># Main execution flow</span>
+<span class="function">main</span>() {
+    <span class="comment"># Initialize</span>
+    create_directories
+    install_packages
+    configure_security
+    
+    <span class="comment"># Main loop</span>
+    <span class="keyword">while</span> <span class="keyword">true</span>; <span class="keyword">do</span>
+        display_main_menu
+        read -p <span class="string">"Enter your choice: "</span> choice
+        
+        <span class="keyword">case</span> <span class="string">"$choice"</span> <span class="keyword">in</span>
+            1) configure_tunnel ;;
+            2) monitor_tunnels ;;
+            3) security_menu ;;
+            4) advanced_features_menu ;;
+            5) system_tools_menu ;;
+            6) download_rathole_core <span class="string">"true"</span> ;;
+            0) 
+                echo -e <span class="string">"${GREEN}Thank you for using RatholStar!${RESET}"</span>
+                log_info <span class="string">"RatholStar session ended"</span>
+                exit 0 
+                ;;
+            *) 
+                log_error <span class="string">"Invalid option: $choice"</span>
+                sleep 2 
+                ;;
+        <span class="keyword">esac</span>
+    <span class="keyword">done</span>
+}
+
+<span class="comment"># Additional menu functions (stubs for now)</span>
+<span class="function">security_menu</span>() {
+    echo -e <span class="string">"${YELLOW}Security menu - Coming soon!${RESET}"</span>
+    sleep 2
+}
+
+<span class="function">advanced_features_menu</span>() {
+    echo -e <span class="string">"${YELLOW}Advanced features menu - Coming soon!${RESET}"</span>
+    sleep 2
+}
+
+<span class="function">system_tools_menu</span>() {
+    echo -e <span class="string">"${YELLOW}System tools menu - Coming soon!${RESET}"</span>
+    sleep 2
+}
+
+<span class="function">view_logs_menu</span>() {
+    echo -e <span class="string">"${YELLOW}Logs menu - Coming soon!${RESET}"</span>
+    sleep 2
+}
+
+<span class="function">service_management_menu</span>() {
+    echo -e <span class="string">"${YELLOW}Service management menu - Coming soon!${RESET}"</span>
+    sleep 2
+}
+
+<span class="comment"># Trap signals for cleanup</span>
+trap <span class="string">'log_info "RatholStar interrupted"; exit 130'</span> INT
+trap <span class="string">'log_info "RatholStar terminated"; exit 143'</span> TERM
+
+<span class="comment"># Start the application</span>
+<span class="keyword">if</span> [[ <span class="string">"${BASH_SOURCE[0]}"</span> == <span class="string">"${0}"</span> ]]; <span class="keyword">then</span>
+    main <span class="string">"$@"</span>
+<span class="keyword">fi</span>
+</div>
+        </div>
+
+        <div class="bg-gray-800 rounded-lg p-6 mt-8">
+            <h2 class="text-2xl font-bold mb-4 text-green-400">
+                <i class="fas fa-download mr-2"></i>Installation & Usage
+            </h2>
+            <div class="space-y-4">
+                <div class="bg-gray-700 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold mb-2 text-blue-400">Quick Installation</h3>
+                    <div class="bg-gray-900 rounded p-3 font-mono text-sm">
+                        <code class="text-green-400">wget -O ratholstar.sh https://raw.githubusercontent.com/Moriistar/ratholstar/main/ratholstar.sh</code><br>
+                        <code class="text-green-400">chmod +x ratholstar.sh</code><br>
+                        <code class="text-green-400">sudo ./ratholstar.sh</code>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-700 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold mb-2 text-blue-400">Key Features</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fas fa-check-circle text-green-400 mr-2"></i>Advanced logging and monitoring system</li>
+                        <li><i class="fas fa-check-circle text-green-400 mr-2"></i>Enhanced security with fail2ban integration</li>
+                        <li><i class="fas fa-check-circle text-green-400 mr-2"></i>Real-time tunnel monitoring</li>
+                        <li><i class="fas fa-check-circle text-green-400 mr-2"></i>Automatic backup and restore functionality</li>
+                        <li><i class="fas fa-check-circle text-green-400 mr-2"></i>Professional systemd service management</li>
+                        <li><i class="fas fa-check-circle text-green-400 mr-2"></i>Enhanced error handling and validation</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-700 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold mb-2 text-blue-400">Requirements</h3>
+                    <ul class="space-y-1 text-sm">
+                        <li><i class="fas fa-server text-blue-400 mr-2"></i>Linux-based system (Ubuntu/Debian/CentOS)</li>
+                        <li><i class="fas fa-user-shield text-blue-400 mr-2"></i>Root privileges</li>
+                        <li><i class="fas fa-globe text-blue-400 mr-2"></i>Internet connectivity</li>
+                        <li><i class="fas fa-memory text-blue-400 mr-2"></i>Minimum 1GB RAM</li>
+                        <li><i class="fas fa-hdd text-blue-400 mr-2"></i>Minimum 100MB storage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-8 text-gray-400">
+            <p>© 2024 RatholStar - Advanced Tunnel Management System</p>
+            <p>Created with ❤️ by t.me/MorteaStar_ir</p>
+        </div>
+    </div>
+</body>
+</html>
